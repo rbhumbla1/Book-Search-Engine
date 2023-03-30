@@ -18,6 +18,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -35,15 +36,14 @@ const resolvers = {
 
       return { token, user };
     },
+
     saveBook: async (parent, { input }, context) => {
       if (context.user) {
-        const thoughtbook = await Book.create({
-          input
-        });
 
        const user =  await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedBooks: book } }
+          { $addToSet: { savedBooks: book } },
+          { new: true, runValidators: true }
         );
 
         return user;
@@ -52,10 +52,6 @@ const resolvers = {
     },
     removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
-        // const book = await Book.findOneAndDelete({
-        //   _id: thoughtId,
-        //   thoughtAuthor: context.user.username,
-        // });
 
         const user = await User.findOneAndUpdate(
           { _id: context.user._id },
