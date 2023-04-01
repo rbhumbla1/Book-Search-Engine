@@ -30,7 +30,8 @@ export const SAVE_BOOK = gql`
         user {
             _id
             username
-          }
+        }
+    }
   }
 `;
 
@@ -40,6 +41,7 @@ export const REMOVE_BOOK = gql`
         user {
             _id
             username
-          }
+        }
+    }
   }
 `;
