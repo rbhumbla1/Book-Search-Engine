@@ -63,6 +63,12 @@ const SearchBooks = () => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
 
+    const authors = bookToSave.authors;
+    const description = bookToSave.description;
+    const image = bookToSave.image;
+    const link =  bookToSave.link;
+    const title =  bookToSave.title;
+
     console.log("********handlebookSve", bookToSave)
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -72,10 +78,13 @@ const SearchBooks = () => {
     }
 
     try {
-      
+      console.log("********handlebookSve 2")
+
       const { data } = await saveBook({
-        variables: { ...bookToSave },
+        variables: { bookId, authors, description, image, link, title },
       });
+
+      console.log("********handlebookSve 3", data)
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);

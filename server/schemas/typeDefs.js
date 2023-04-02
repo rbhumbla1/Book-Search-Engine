@@ -34,6 +34,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    user(username: String!): User
     me: User
   }
 
@@ -46,7 +47,7 @@ const typeDefs = gql`
       description: String,
       image: String,
       link: String,
-      title: String!,
+      title: String!
     ): User
     removeBook(bookId: String!): User
   }
