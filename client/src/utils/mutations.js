@@ -44,7 +44,7 @@ mutation SaveBook($title: String!, $bookId: String, $authors: [String], $descrip
 `;
 
 export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: String!) {
+  mutation RemoveBook($bookId: String!) {
     removeBook(bookId: $bookId) {
         user {
             _id

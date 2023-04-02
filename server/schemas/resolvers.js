@@ -8,7 +8,10 @@ const resolvers = {
       return User.findOne({ username }).populate('savedBooks');
     },
     me: async (parent, args, context) => {
+      console.log("############### me server ", context)
       if (context.user) {
+        console.log("############### me server ", context.user.username)
+
         return User.findOne({ _id: context.user._id }).populate('savedBooks');
       }
       throw new AuthenticationError('You need to be logged in!');
@@ -44,7 +47,6 @@ const resolvers = {
     saveBook: async (parent, { bookId, authors, description, image, link, title}, context) => {
       if (context.user) {
 
-        console.log("###############save book server ", bookId, authors, description, image, link, title)
 
        const user =  await User.findOneAndUpdate(
           { _id: context.user._id },
