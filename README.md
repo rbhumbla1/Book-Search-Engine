@@ -42,11 +42,11 @@ When the user clicks on the Logout button, they are logged out of the site and p
 
 The following animation demonstrates the application functionality on app installed on Heroku:
 
-[Demonstration of Search Engine](./Assets/demo-text-editor.mp4) or [demo on google Drive](https://drive.google.com/file/d/1ErImjJbkGNJrCv_g3YOi0S4E67qHicIE/view?usp=share_link)
+[Demonstration of Search Engine](./assets/Book-Search-Engine.mp4) or [demo on google Drive](https://drive.google.com/file/d/1khjEcXvg6D7EP-k0myPvtxoAUuY2RtUF/view?usp=sharing)
 
-[Screenshot of Search page](./assets/Search.PNG)
+![Screenshot of Search page](./assets/Search.PNG)
 
-[Screenshot of Saved Books page](./assets/Saved.PNG)
+![Screenshot of Saved Books page](./assets/Saved.PNG)
 
 ## Usage
 1. You can access the file in GitHub repository: https://github.com/Book-Search-Engine
