@@ -44,16 +44,16 @@ The following animation demonstrates the application functionality on app instal
 
 [Demonstration of Search Engine](./Assets/demo-text-editor.mp4) or [demo on google Drive](https://drive.google.com/file/d/1ErImjJbkGNJrCv_g3YOi0S4E67qHicIE/view?usp=share_link)
 
-[Screenshot of Search page]
+[Screenshot of Search page](./assets/Search.PNG)
 
-[Screenshot of Saved Books page]
+[Screenshot of Saved Books page](./assets/Saved.PNG)
 
 ## Usage
-1. You can access the file in GitHub repository: https://github.com/rbhumbla1/Text-Editor-PWA
-2. The application is deployed on Heroku and can be accessed using the URL: https://secret-sierra-86705.herokuapp.com/
+1. You can access the file in GitHub repository: https://github.com/Book-Search-Engine
+2. The application is deployed on Heroku and can be accessed using the URL: https://still-lowlands-02342.herokuapp.com/
 2. Run the application in the terminal using this command: 
 ```
-npm run start
+npm run develop
 ``` 
 
 ## License
