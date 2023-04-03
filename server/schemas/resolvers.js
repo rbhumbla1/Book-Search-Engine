@@ -8,9 +8,9 @@ const resolvers = {
       return User.findOne({ username }).populate('savedBooks');
     },
     me: async (parent, args, context) => {
-      console.log("############### me server ", context)
+      
       if (context.user) {
-        console.log("############### me server ", context.user.username)
+       
 
         return User.findOne({ _id: context.user._id }).populate('savedBooks');
       }
@@ -60,10 +60,11 @@ const resolvers = {
     },
     removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
-
+        console.log("###########removebook server", bookId);
+        
         const user = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedBooks: {bookId: bookId } }},
+          { $pull: { savedBooks: {bookId}}},
           { new: true }
         );
 

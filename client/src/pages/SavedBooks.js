@@ -10,16 +10,13 @@ import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
-  const [userData, setUserData] = useState({});
-
+  
   const { data } = useQuery(GET_ME);
   const [removeBook] = useMutation(REMOVE_BOOK);
 
-  console.log("*********** query_me savedbooks ", data);
-
-  //const userData = data?.me || data?.user || {};
-  setUserData(data?.me);
-
+ 
+  const userData = data?.me || data?.user || {};
+  
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
 
@@ -33,12 +30,12 @@ const SavedBooks = () => {
     }
 
     try {
+      console.log("***********handle book del", bookId)
       const { data } = await removeBook({
         variables: { bookId },
       });
-
-      console.log("**********handledelBook ", data);
-      setUserData(data?.me);
+      console.log("***********handle book del 2" )
+      //window.location.reload();
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
